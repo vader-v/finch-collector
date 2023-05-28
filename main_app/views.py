@@ -24,6 +24,3 @@ def about(request):
 
 def finch_index(request):
   return render(request, 'finches/index.html', { 'finches': finches })
-
-def finch_index(request):
-  return render(request, 'finches/index.html', { 'finches': finches })
