@@ -18,6 +18,7 @@
 <section class="card-container">
   {% for finch in finches %}
     <div class="card">
+      <a href="/finches/{{ finch.id }}">
       <div class="card-content">
         <div class="card-img-container">
           <img 
@@ -28,10 +29,11 @@
         {% if finch.age > 0 %}
           <p>A {{ finch.age }} year old {{ finch.breed }}</p>
         {% else %}
-          <p>A {{ finch.breed }} kitten.</p>
+          <p>A {{ finch.breed }} hatchling.</p>
         {% endif %}
         <p><small>{{ finch.description }}</small></p>
       </div>
+    </a> 
     </div>
   {% endfor %}
 </section>
