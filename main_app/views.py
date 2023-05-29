@@ -36,7 +36,7 @@ class FinchCreate(CreateView):
 
 class FinchUpdate(UpdateView):
   model = Finch
-  fields = '__all__'
+  fields = ['breed', 'description', 'age']
 
 class FinchDelete(DeleteView):
   model = Finch
