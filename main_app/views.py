@@ -33,7 +33,7 @@ def add_feeding(request, finch_id):
 
 class FinchCreate(CreateView):
   model = Finch
-  fields = '__all__'
+  fields = ['name', 'breed', 'description', 'age']
   success_url = '/finches/'
 
 class FinchUpdate(UpdateView):
