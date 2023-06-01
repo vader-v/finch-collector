@@ -1,3 +1,5 @@
+from django.forms.models import BaseModelForm
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
@@ -38,6 +40,9 @@ class FinchCreate(CreateView):
   model = Finch
   fields = ['name', 'breed', 'description', 'age']
   success_url = '/finches/'
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 class FinchUpdate(UpdateView):
   model = Finch
